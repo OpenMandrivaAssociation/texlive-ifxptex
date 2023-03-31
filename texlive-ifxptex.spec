@@ -1,6 +1,6 @@
 Name:		texlive-ifxptex
 Version:	46153
-Release:	1
+Release:	2
 Summary:	Detect pTeX and its derivatives
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/ifxptex

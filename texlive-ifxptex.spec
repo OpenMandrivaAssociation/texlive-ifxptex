@@ -3,7 +3,7 @@ Version:	46153
 Release:	2
 Summary:	Detect pTeX and its derivatives
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/ifxptex
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/ifxptex
 License:	knuth
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/ifxptex.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/ifxptex.doc.r%{version}.tar.xz

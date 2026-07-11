@@ -1,37 +1,22 @@
-Name:		texlive-ifxptex
-Version:	46153
-Release:	2
+%global tl_name ifxptex
+%global tl_revision 46153
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	0.2
+Release:	%{tl_revision}.1
 Summary:	Detect pTeX and its derivatives
 Group:		Publishing
-URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/ifxptex
+URL:		https://www.ctan.org/tex-archive/macros/generic/ifxptex
 License:	knuth
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/ifxptex.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/ifxptex.doc.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/ifxptex.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/ifxptex.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-The package provides commands for detecting pTeX and its
-derivatives (e-pTeX, upTeX, e-upTeX, and ApTeX). Both LaTeX and
-plain TeX are supported.
+The package provides commands for detecting pTeX and its derivatives
+(e-pTeX, upTeX, e-upTeX, and ApTeX). Both LaTeX and plain TeX are
+supported.
 
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%{_texmfdistdir}/tex/generic/ifxptex
-%doc %{_texmfdistdir}/doc/generic/ifxptex
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
